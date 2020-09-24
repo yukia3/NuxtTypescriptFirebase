@@ -9,16 +9,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({
-  props: {
-    isLoading: {
-      type: Boolean,
-      default: false,
-    },
-  },
-})
+@Component({})
+export default class BaseTextStatic extends Vue {
+  @Prop({ type: Boolean, default: false })
+  isLoading!: boolean
+}
 </script>
 
 <style lang="scss" scoped>

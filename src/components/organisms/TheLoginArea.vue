@@ -18,15 +18,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Component, Vue } from 'nuxt-property-decorator'
 import BaseLink from '~/components/atoms/BaseLink.vue'
 import LoginForm from '~/components/organisms/LoginForm.vue'
 
-export default defineComponent({
-  name: 'TheLoginArea',
+@Component({
   components: {
     BaseLink,
     LoginForm,
   },
 })
+export default class TheLoginArea extends Vue {}
 </script>

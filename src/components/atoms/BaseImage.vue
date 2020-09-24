@@ -3,16 +3,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({
-  props: {
-    src: {
-      type: String,
-      required: true,
-    },
-  },
-})
+@Component({})
+export default class BaseImage extends Vue {
+  @Prop({
+    type: String,
+    required: true
+  })
+  src!: String
+}
 </script>
 
 <style scoped>

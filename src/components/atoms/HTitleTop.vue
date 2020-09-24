@@ -5,7 +5,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({})
+@Component({})
+export default class HTitleTop extends Vue {}
 </script>
+
+<style></style>

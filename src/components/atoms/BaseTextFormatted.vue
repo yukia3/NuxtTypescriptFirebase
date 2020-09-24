@@ -5,16 +5,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({
-  props: {
-    text: {
-      type: String,
-      default: '',
-    },
-  },
-})
+@Component({})
+export default class BaseTextFormatted extends Vue {
+  @Prop({ type: String, default: '' })
+  text!: string
+}
 </script>
 
 <style scoped>

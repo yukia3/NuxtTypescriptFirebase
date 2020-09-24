@@ -10,15 +10,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({
-  name: 'NotificationError',
-  props: {
-    active: {
-      type: Boolean,
-      required: true,
-    },
-  },
-})
+@Component({})
+export default class NotificationError extends Vue {
+  @Prop({ type: Boolean, required: true })
+  active!: boolean
+}
 </script>

@@ -29,29 +29,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({
+@Component({
   inheritAttrs: false,
-  props: {
-    irregular: {
-      type: Boolean,
-      required: false,
-    },
-    type: {
-      type: [String, Object],
-      default: 'is-primary',
-    },
-    nativeType: {
-      type: String,
-      default: 'button',
-    },
-    narrowed: {
-      type: Boolean,
-      default: false,
-    },
-  },
 })
+export default class BaseButton extends Vue {
+  @Prop({ type: Boolean, default: false })
+  irregular!: boolean
+
+  @Prop({ type: [String, Object], default: 'is-primary' })
+  type!: string
+
+  @Prop({ type: String, default: 'button' })
+  nativeType!: string
+
+  @Prop({ type: Boolean, default: false })
+  narrowed!: boolean
+}
 </script>
 
 <style lang="scss" scoped>

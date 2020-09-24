@@ -4,8 +4,11 @@
   </h2>
 </template>
 
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+<script>
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({})
+@Component({})
+export default class HTitleArea extends Vue {}
 </script>
+
+<style></style>

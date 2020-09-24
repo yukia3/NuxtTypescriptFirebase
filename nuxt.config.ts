@@ -115,6 +115,18 @@ const config: NuxtConfig = {
     // https://baianat.github.io/vee-validate/examples/nuxt.html
     transpile: ['vee-validate/dist/rules'],
   },
+  serverMiddleware: ['~/api/auth'],
+  pwa: {
+    workbox: {
+      offline: false,
+      importScripts: [
+        'https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js',
+        'https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js',
+      ],
+      workboxExtensions: ['~/sw/firebase'],
+      dev: true,
+    },
+  },
 }
 
 export default config

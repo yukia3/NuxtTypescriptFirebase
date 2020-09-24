@@ -1,11 +1,12 @@
 <template>
-  <span class="has-text-danger is-size-7">必須</span>
+  <span class="has-text-danger is-size-7"> 必須 </span>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default defineComponent({})
+@Component({})
+export default class RequireLabel extends Vue {}
 </script>
 
 <style scoped>
