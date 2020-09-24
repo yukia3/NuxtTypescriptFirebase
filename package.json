@@ -63,6 +63,7 @@
     "sass-loader": "^10.0.2",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "vuex-module-decorators": "^1.0.1"
   }
 }

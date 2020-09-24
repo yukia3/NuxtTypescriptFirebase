@@ -10,13 +10,11 @@ import {
   defineComponent,
   useAsync,
   onMounted,
-  inject,
   useContext,
 } from '@nuxtjs/composition-api'
 import HTitlePage from '~/components/atoms/HTitlePage.vue'
 import TheLoginArea from '~/components/organisms/TheLoginArea.vue'
-import AuthKey from '~/store/auth/key'
-import { AuthStore } from '~/store/auth'
+import { AuthStore } from '~/store/index'
 
 export default defineComponent({
   name: 'LoginIndexPage',
@@ -31,11 +29,9 @@ export default defineComponent({
     }
   },
   setup() {
-    const { isAuthenticated } = inject(AuthKey) as AuthStore
-
     const { redirect } = useContext()
     const asyncData = useAsync(() => {
-      if (isAuthenticated()) {
+      if (AuthStore.isAuthenticated) {
         redirect('/')
       }
     })

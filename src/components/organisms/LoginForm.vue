@@ -72,8 +72,7 @@ import BaseButton from '~/components/atoms/BaseButton.vue'
 import RequireLabel from '~/components/atoms/RequireLabel.vue'
 import NotificationError from '~/components/molecules/NotificationError.vue'
 import ErrorLog from '~/composables/ErrorLog'
-import AuthKey from '~/store/auth/key'
-import { AuthStore } from '~/store/auth'
+import { AuthStore } from '~/store/index'
 import TransitionSourceKey from '~/store/transitionSource/key'
 import { TransitionSourceStore } from '~/store/transitionSource'
 import { USER_STATUSES } from '~/services/nuxt-typescript-firebase/invariables'
@@ -112,7 +111,6 @@ export default defineComponent({
     })
 
     // Stores
-    const { login } = inject(AuthKey) as AuthStore
     const { sourceState, clearSource } = inject(
       TransitionSourceKey
     ) as TransitionSourceStore
@@ -182,7 +180,7 @@ export default defineComponent({
 
         const uid = authUser.user.uid
 
-        login(uid).catch((error: any) => {
+        AuthStore.login(uid).catch((error: any) => {
           let message = 'Unknown error has occurred. : '
           message += error.code ? ` ${error.code} ` : ''
           message += error.message ? `${error.message}` : ''

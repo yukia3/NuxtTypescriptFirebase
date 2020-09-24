@@ -46,7 +46,7 @@ const config: NuxtConfig = {
    ** https://nuxtjs.org/guide/plugins
    */
   // plugins: [],
-  plugins: ['~plugins/vee-validate'],
+  plugins: ['~plugins/vee-validate', '~/plugins/axios-accessor'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
