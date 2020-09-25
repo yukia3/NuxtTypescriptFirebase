@@ -1,10 +1,6 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import * as Vuex from 'vuex'
-import { SystemVersion } from '~/types/models/system_version'
 import firebase from '~/plugins/firebase'
-import { NUM_SHARDS_ACTION_LOG } from '~/constants/common'
-
-const db = firebase.firestore()
 
 @Component({})
 export default class MomeVue extends Vue {
